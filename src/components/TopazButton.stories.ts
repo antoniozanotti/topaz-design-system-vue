@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import TopazButton from "./TopazButton.vue";
+import * as heroIcons from '@heroicons/vue/20/solid'
+export type HeroIconName = keyof typeof heroIcons
 
 const meta: Meta<typeof TopazButton> = {
   component: TopazButton,
   tags: ["autodocs"],
   argTypes: {
+    iconName: { control: "select", options: Object.keys(heroIcons) },
     size: { control: "select", options: ["small", "medium", "large"] },
     variant: {
       control: "select",

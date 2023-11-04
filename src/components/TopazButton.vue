@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { BeakerIcon } from '@heroicons/vue/20/solid'
+import * as heroIcons from '@heroicons/vue/20/solid'
+export type HeroIconName = keyof typeof heroIcons
 
 interface TopazButtonProps {
   label?: string;
-  iconName?: string;
+  iconName?: HeroIconName;
   isIconAfterLabel?: boolean;
   size?: "small" | "medium" | "large";
   variant?: "accent" | "primary" | "secondary" | "negative" | "black" | "white";
@@ -36,10 +37,8 @@ const classes = computed(() => ({
     props.treatment == "fill" && props.variant == "secondary",
   "bg-negative text-white":
     props.treatment == "fill" && props.variant == "negative",
-  "bg-black text-white":
-    props.treatment == "fill" && props.variant == "black",
-  "bg-white text-black":
-    props.treatment == "fill" && props.variant == "white",
+  "bg-black text-white": props.treatment == "fill" && props.variant == "black",
+  "bg-white text-black": props.treatment == "fill" && props.variant == "white",
 
   // Outline
   "outline outline-1": props.treatment == "outline",
@@ -57,7 +56,7 @@ const classes = computed(() => ({
     props.treatment == "outline" && props.variant == "white",
 
   // Is Disabled
-  "opacity-75": props.isDisabled
+  "opacity-75": props.isDisabled,
 }));
 
 const iconClasses = computed(() => ({
@@ -67,12 +66,24 @@ const iconClasses = computed(() => ({
   "h-7 w-7": props.size == "large",
 }));
 // BeakerIcon
+// ArchiveBoxIcon
+const iconName = computed(() =>
+  props.iconName ? heroIcons[props.iconName] : ''
+);
 </script>
 
 <template>
   <button :class="classes" :disabled="props.isDisabled">
-    <component :is="props.iconName" :class="iconClasses" v-if="props.iconName && !props.isIconAfterLabel" />
+    <component
+      :is="iconName"
+      :class="iconClasses"
+      v-if="iconName && !props.isIconAfterLabel"
+    />
     <span v-if="props.label">{{ label }}</span>
-    <component :is="props.iconName" :class="iconClasses" v-if="props.iconName && props.isIconAfterLabel" />
+    <component
+      :is="iconName"
+      :class="iconClasses"
+      v-if="iconName && props.isIconAfterLabel"
+    />
   </button>
 </template>
