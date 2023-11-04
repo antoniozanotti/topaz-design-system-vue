@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/vue3";
 import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
+import topaz from './topaz';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +12,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    theme: topaz
   },
 };
 

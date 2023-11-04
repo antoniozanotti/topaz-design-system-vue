@@ -7,7 +7,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.0",
+    "@heroicons/vue": "^2.0.18",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -15,11 +15,14 @@
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
     "@storybook/blocks": "^7.5.2",
+    "@storybook/manager-api": "^7.5.2",
     "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "^7.5.2",
     "@storybook/vue3": "^7.5.2",
     "@storybook/vue3-vite": "^7.5.2",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18.18.5",
+    "@unocss/preset-wind": "^0.57.1",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/tsconfig": "^0.4.0",
     "npm-run-all2": "^6.1.1",
