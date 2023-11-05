@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import * as heroIcons from '@heroicons/vue/20/solid'
-export type HeroIconName = keyof typeof heroIcons
+import * as heroIcons from "@heroicons/vue/20/solid";
 
 interface TopazButtonProps {
   label?: string;
-  iconName?: HeroIconName;
+  iconName?: string;
   isIconAfterLabel?: boolean;
   size?: "small" | "medium" | "large";
   variant?: "accent" | "primary" | "secondary" | "negative" | "black" | "white";
@@ -19,16 +18,27 @@ const props = withDefaults(defineProps<TopazButtonProps>(), {
   treatment: "fill",
   isDisabled: false,
 });
+
+const iconName = computed(() =>
+  props.iconName ? heroIcons[props.iconName] : ""
+);
+
+/* button style */
 const classes = computed(() => ({
-  // Default
-  "rounded-md font-medium flex items-center": true,
+  // default
+  "rounded-full font-medium flex justify-center items-center": true,
 
-  // Size
-  "px-4 py-1 text-sm": props.size == "small",
-  "px-6 py-2 text-base": props.size == "medium",
-  "px-8 py-3 text-lg": props.size == "large",
+  // size
+  "text-sm   min-h-42px min-w-42px lg:text-xs   lg:min-h-34px lg:min-w-34px": props.size == "small",
+  "text-base min-h-60px min-w-60px lg:text-sm   lg:min-h-48px lg:min-w-48px": props.size == "medium",
+  "text-lg   min-h-72px min-w-72px lg:text-base lg:min-h-58px lg:min-w-58px": props.size == "large",
 
-  // Fill
+  // padding only with text
+  "px-42px": props.size == "small" && props.label != "",
+  "px-60px": props.size == "medium" && props.label != "",
+  "px-72px": props.size == "large" && props.label != "",
+
+  // fill
   "bg-accent text-white":
     props.treatment == "fill" && props.variant == "accent",
   "bg-primary text-white":
@@ -40,7 +50,7 @@ const classes = computed(() => ({
   "bg-black text-white": props.treatment == "fill" && props.variant == "black",
   "bg-white text-black": props.treatment == "fill" && props.variant == "white",
 
-  // Outline
+  // outline
   "outline outline-1": props.treatment == "outline",
   "outline-accent text-accent":
     props.treatment == "outline" && props.variant == "accent",
@@ -55,21 +65,24 @@ const classes = computed(() => ({
   "outline-white text-white":
     props.treatment == "outline" && props.variant == "white",
 
-  // Is Disabled
+  // is disabled
   "opacity-75": props.isDisabled,
 }));
 
+/* icon style */
 const iconClasses = computed(() => ({
-  // Size
-  "h-5 w-5": props.size == "small",
-  "h-6 w-6": props.size == "medium",
-  "h-7 w-7": props.size == "large",
+  // size
+  "h-18px w-18px lg:h-14px lg:w-14px": props.size == "small",
+  "h-30px w-30px lg:h-24px lg:w-24px": props.size == "medium",
+  "h-36px w-36px lg:h-29px lg:w-29px": props.size == "large",
 }));
-// BeakerIcon
-// ArchiveBoxIcon
-const iconName = computed(() =>
-  props.iconName ? heroIcons[props.iconName] : ''
-);
+
+/* label style */
+const spanClasses = computed(() => ({
+  // padding between icon and text
+  "pl-7px": iconName.value != "" && !props.isIconAfterLabel,
+  "pr-7px": iconName.value != "" && props.isIconAfterLabel,
+}));
 </script>
 
 <template>
@@ -79,7 +92,7 @@ const iconName = computed(() =>
       :class="iconClasses"
       v-if="iconName && !props.isIconAfterLabel"
     />
-    <span v-if="props.label">{{ label }}</span>
+    <span v-if="props.label" :class="spanClasses">{{ label }}</span>
     <component
       :is="iconName"
       :class="iconClasses"
