@@ -12,7 +12,7 @@ const meta: Meta<typeof TopazButton> = {
       control: "select",
       options: ["accent", "primary", "secondary", "negative", "black", "white"],
     },
-    treatment: { control: "select", options: ["fill", "outline"] }
+    style: { control: "select", options: ["fill", "outline"] }
   },
   args: {
     label: "Button",
@@ -20,7 +20,7 @@ const meta: Meta<typeof TopazButton> = {
     isIconAfterLabel: false,
     size: "medium",
     variant: "accent",
-    treatment: "fill",
+    style: "fill",
     isDisabled: false,
   },
 };

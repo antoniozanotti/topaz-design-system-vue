@@ -7,7 +7,7 @@ interface TopazButtonProps {
   isIconAfterLabel?: boolean;
   size?: "small" | "medium" | "large";
   variant?: "accent" | "primary" | "secondary" | "negative" | "black" | "white";
-  treatment?: "fill" | "outline";
+  style?: "fill" | "outline";
   isDisabled?: boolean;
 }
 
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<TopazButtonProps>(), {
   isIconAfterLabel: false,
   size: "medium",
   variant: "accent",
-  treatment: "fill",
+  style: "fill",
   isDisabled: false,
 });
 
@@ -28,45 +28,65 @@ const classes = computed(() => ({
   // default
   "rounded-full font-medium flex justify-center items-center": true,
 
+  // focus
+  "focus:outline focus:outline-offset-2px focus:outline-2px": true,
+
   // size
-  "text-sm   min-h-42px min-w-42px lg:text-xs   lg:min-h-34px lg:min-w-34px": props.size == "small",
-  "text-base min-h-60px min-w-60px lg:text-sm   lg:min-h-48px lg:min-w-48px": props.size == "medium",
-  "text-lg   min-h-72px min-w-72px lg:text-base lg:min-h-58px lg:min-w-58px": props.size == "large",
+  "text-sm   min-h-42px min-w-42px lg:text-xs   lg:min-h-34px lg:min-w-34px":
+    props.size == "small",
+  "text-base min-h-60px min-w-60px lg:text-sm   lg:min-h-48px lg:min-w-48px":
+    props.size == "medium",
+  "text-lg   min-h-72px min-w-72px lg:text-base lg:min-h-58px lg:min-w-58px":
+    props.size == "large",
 
   // padding only with text
-  "px-42px": props.size == "small" && props.label != "",
-  "px-60px": props.size == "medium" && props.label != "",
-  "px-72px": props.size == "large" && props.label != "",
+  "px-21px lg:px-17px": props.size == "small" && props.label != "",
+  "px-30px lg:px-24px": props.size == "medium" && props.label != "",
+  "px-36px lg:px-29px": props.size == "large" && props.label != "",
 
   // fill
-  "bg-accent text-white":
-    props.treatment == "fill" && props.variant == "accent",
-  "bg-primary text-white":
-    props.treatment == "fill" && props.variant == "primary",
-  "bg-secondary text-primary":
-    props.treatment == "fill" && props.variant == "secondary",
-  "bg-negative text-white":
-    props.treatment == "fill" && props.variant == "negative",
-  "bg-black text-white": props.treatment == "fill" && props.variant == "black",
-  "bg-white text-black": props.treatment == "fill" && props.variant == "white",
+  // fill -> accent
+  "bg-accent hover:bg-accent-600 active:bg-accent-700 text-light focus:outline-accent":
+    props.style == "fill" && props.variant == "accent",
+  // fill -> primary
+  "bg-primary hover:bg-primary-600 active:bg-primary-700 text-light focus:outline-primary":
+    props.style == "fill" && props.variant == "primary",
+  // fill -> secondary
+  "bg-secondary hover:bg-secondary-600 active:bg-secondary-700 text-primary focus:outline-secondary":
+    props.style == "fill" && props.variant == "secondary",
+  // fill -> negative
+  "bg-negative hover:bg-negative-600 active:bg-negative-700 text-light focus:outline-negative":
+    props.style == "fill" && props.variant == "negative",
+  // fill -> black
+  "bg-dark hover:bg-dark-700 active:bg-dark-600 text-light focus:outline-dark":
+    props.style == "fill" && props.variant == "black",
+  // fill -> white
+  "bg-light hover:bg-light-600 active:bg-light-700 text-dark focus:outline-light":
+    props.style == "fill" && props.variant == "white",
 
   // outline
-  "outline outline-1": props.treatment == "outline",
-  "outline-accent text-accent":
-    props.treatment == "outline" && props.variant == "accent",
-  "outline-primary text-primary":
-    props.treatment == "outline" && props.variant == "primary",
-  "outline-secondary text-primary":
-    props.treatment == "outline" && props.variant == "secondary",
-  "outline-negative text-negative":
-    props.treatment == "outline" && props.variant == "negative",
-  "outline-black text-black":
-    props.treatment == "outline" && props.variant == "black",
-  "outline-white text-white":
-    props.treatment == "outline" && props.variant == "white",
+  "outline outline-1px": props.style == "outline",
+  // outline -> accent
+  "outline-accent hover:outline-accent-600 active:outline-accent-700 active: text-accent":
+    props.style == "outline" && props.variant == "accent",
+  // outline -> primary
+  "outline-primary  hover:outline-primary-600 active:outline-primary-700 text-primary":
+    props.style == "outline" && props.variant == "primary",
+  // outline -> secondary
+  "outline-secondary hover:outline-secondary-600 active:outline-secondary-700  text-primary":
+    props.style == "outline" && props.variant == "secondary",
+  // outline -> negative
+  "outline-negative hover:outline-negative-600 active:outline-negative-700  text-negative":
+    props.style == "outline" && props.variant == "negative",
+  // outline -> black
+  "outline-dark hover:outline-dark-700 active:outline-dark-600  text-dark":
+    props.style == "outline" && props.variant == "black",
+  // outline -> white
+  "outline-light hover:outline-light-600 active:outline-light-700  text-light":
+    props.style == "outline" && props.variant == "white",
 
   // is disabled
-  "opacity-75": props.isDisabled,
+  "opacity-50 pointer-events-none": props.isDisabled,
 }));
 
 /* icon style */
