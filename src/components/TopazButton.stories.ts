@@ -6,7 +6,7 @@ const meta: Meta<typeof TopazButton> = {
   component: TopazButton,
   tags: ["autodocs"],
   argTypes: {
-    iconName: { control: "select", options: Object.keys(heroIcons) },
+    iconName: { control: "select", options: ["", ...Object.keys(heroIcons)] },
     size: { control: "select", options: ["small", "medium", "large"] },
     variant: {
       control: "select",
