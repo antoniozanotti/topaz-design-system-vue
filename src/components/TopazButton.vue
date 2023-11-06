@@ -46,7 +46,7 @@ const classes = computed(() => ({
 
   // fill
   // fill -> accent
-  "bg-accent hover:bg-accent-600 active:bg-accent-700 text-light focus:outline-accent":
+  "bg-accent hover:bg-accent-600 active:bg-accent-700 text-light focus:outline-accent dark:bg-white":
     props.style == "fill" && props.variant == "accent",
   // fill -> primary
   "bg-primary hover:bg-primary-600 active:bg-primary-700 text-light focus:outline-primary":
