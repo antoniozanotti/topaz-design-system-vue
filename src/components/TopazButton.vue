@@ -2,12 +2,33 @@
 import * as heroIcons from "@heroicons/vue/20/solid";
 
 interface TopazButtonProps {
+  /**
+   * The label of the button.
+   */
   label?: string;
+  /**
+   * The icon of the button.
+   */
   iconName?: string;
+  /**
+   * Is the icon after the label?
+   */
   isIconAfterLabel?: boolean;
+  /**
+   * The size of the button.
+   */
   size?: "small" | "medium" | "large";
+  /**
+   * The variant of the button.
+   */
   variant?: "accent" | "primary" | "secondary" | "negative" | "black" | "white";
+  /**
+   * The style of the button.
+   */
   style?: "fill" | "outline";
+  /**
+   * Is the button disabled?
+   */
   isDisabled?: boolean;
 }
 
@@ -41,8 +62,8 @@ const variantStyleMode = computed(() => {
   return props.variant;
 });
 
-/* button style */
-const classes = computed(() => ({
+/* button classes */
+const buttonClasses = computed(() => ({
   // default
   "rounded-full font-medium flex justify-center items-center": true,
 
@@ -110,7 +131,7 @@ const classes = computed(() => ({
   "opacity-50 pointer-events-none": props.isDisabled,
 }));
 
-/* icon style */
+/* icon classes */
 const iconClasses = computed(() => ({
   // size
   "h-18px w-18px lg:h-14px lg:w-14px": props.size == "small",
@@ -118,8 +139,8 @@ const iconClasses = computed(() => ({
   "h-36px w-36px lg:h-29px lg:w-29px": props.size == "large",
 }));
 
-/* label style */
-const spanClasses = computed(() => ({
+/* label classes */
+const labelClasses = computed(() => ({
   // padding between icon and text
   "pl-7px": iconName.value != "" && !props.isIconAfterLabel,
   "pr-7px": iconName.value != "" && props.isIconAfterLabel,
@@ -127,13 +148,13 @@ const spanClasses = computed(() => ({
 </script>
 
 <template>
-  <button :class="classes" :disabled="props.isDisabled">
+  <button :class="buttonClasses" :disabled="props.isDisabled">
     <component
       :is="iconName"
       :class="iconClasses"
       v-if="iconName && !props.isIconAfterLabel"
     />
-    <span v-if="props.label" :class="spanClasses">{{ label }}</span>
+    <span v-if="props.label" :class="labelClasses">{{ label }}</span>
     <component
       :is="iconName"
       :class="iconClasses"
