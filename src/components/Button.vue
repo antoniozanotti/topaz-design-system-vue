@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/20/solid";
 
-interface TopazButtonProps {
+interface ButtonProps {
   /**
    * The label of the button.
    */
@@ -32,7 +32,7 @@ interface TopazButtonProps {
   isDisabled?: boolean;
 }
 
-const props = withDefaults(defineProps<TopazButtonProps>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   isIconAfterLabel: false,
   size: "medium",
   variant: "accent",
@@ -45,17 +45,17 @@ const iconName = computed(() =>
 );
 
 const variantStyleMode = computed(() => {
-  if (document.documentElement.classList.contains('dark')){
-    if(props.variant == "primary"){
+  if (document.documentElement.classList.contains("dark")) {
+    if (props.variant == "primary") {
       return "secondary";
     }
-    if(props.variant == "secondary"){
+    if (props.variant == "secondary") {
       return "primary";
     }
-    if(props.variant == "black"){
+    if (props.variant == "black") {
       return "white";
     }
-    if(props.variant == "white"){
+    if (props.variant == "white") {
       return "black";
     }
   }
