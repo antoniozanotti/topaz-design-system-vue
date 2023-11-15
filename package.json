@@ -1,5 +1,6 @@
 {
   "name": "@topaz-vue/topaz-vue",
+  "description": "UI component library based on tailwindcss, UnoCSS, heroicons. Topaz is a MIT licensed project that is developed and maintained by Antônio Zanotti.",
   "version": "0.0.1",
   "private": false,
   "type": "module",
@@ -16,26 +17,25 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/topaz-vue.umd.cjs",
-  "module": "./dist/topaz-vue.js",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/topaz-vue.js",
-      "require": "./dist/topaz-vue.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "dev-storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build": "vite build && vue-tsc",
+    "build-ts": "vue-tsc",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@heroicons/vue": "^2.0.18"
-  },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "@heroicons/vue": "^2.0.18"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",
@@ -62,7 +62,10 @@
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.3",
     "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^1.8.19"
+    "vue-tsc": "^1.8.19",
+    "vue": "^3.3.4",
+    "@heroicons/vue": "^2.0.18"
   }
 }
