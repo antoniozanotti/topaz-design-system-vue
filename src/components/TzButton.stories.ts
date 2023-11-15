@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Button from "./Button.vue";
+import TzButton from "./TzButton.vue";
 import * as heroIcons from '@heroicons/vue/20/solid'
 
 /**
- * The button component has styles for hover, active and focus events, try it.
+ * The TzButton component has styles for hover, active and focus events, try it.
  */
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof TzButton> = {
+  component: TzButton,
   tags: ["autodocs"],
   argTypes: {
     iconName: { control: "select", options: ["", ...Object.keys(heroIcons)] },

@@ -1,26 +1,40 @@
 {
   "name": "topaz-vue",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/topaz-vue.umd.cjs",
+  "module": "./dist/topaz-vue.js",
+  "exports": {
+    ".": {
+      "import": "./dist/topaz-vue.js",
+      "require": "./dist/topaz-vue.umd.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev-storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "types": "vue-tsc",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.5.2",
-    "@storybook/addon-interactions": "^7.5.2",
-    "@storybook/addon-links": "^7.5.2",
-    "@storybook/addon-themes": "^7.5.2",
-    "@storybook/blocks": "^7.5.2",
-    "@storybook/manager-api": "^7.5.2",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-themes": "^7.5.3",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/manager-api": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
-    "@storybook/theming": "^7.5.2",
-    "@storybook/vue3": "^7.5.2",
-    "@storybook/vue3-vite": "^7.5.2",
+    "@storybook/theming": "^7.5.3",
+    "@storybook/vue3": "^7.5.3",
+    "@storybook/vue3-vite": "^7.5.3",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18.18.5",
     "@unocss/preset-wind": "^0.57.1",
@@ -29,7 +43,7 @@
     "npm-run-all2": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.5.2",
+    "storybook": "^7.5.3",
     "typescript": "~5.2.0",
     "unocss": "^0.57.1",
     "unplugin-auto-import": "^0.16.7",

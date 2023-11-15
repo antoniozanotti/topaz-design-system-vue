@@ -4,7 +4,7 @@ import topazBrand from './topaz-brand.svg?url'
 export default create({
   base: 'light',
   brandTitle: 'Topaz Design System Vue',
-  brandUrl: 'https://topaz-vue.netlify.app',
+  brandUrl: '/',
   brandImage: topazBrand,
   brandTarget: '_self',
 });

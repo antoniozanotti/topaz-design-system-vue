@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/20/solid";
+type IconName = keyof typeof heroIcons;
 
-interface ButtonProps {
+interface TzButtonProps {
   /**
    * The label of the button.
    */
@@ -9,7 +10,7 @@ interface ButtonProps {
   /**
    * The icon of the button.
    */
-  iconName?: string;
+  iconName?: IconName;
   /**
    * Is the icon after the label?
    */
@@ -32,7 +33,7 @@ interface ButtonProps {
   isDisabled?: boolean;
 }
 
-const props = withDefaults(defineProps<ButtonProps>(), {
+const props = withDefaults(defineProps<TzButtonProps>(), {
   isIconAfterLabel: false,
   size: "medium",
   variant: "accent",
