@@ -1,9 +1,21 @@
 {
   "name": "topaz-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "type": "module",
-  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniozanotti/topaz-vue.git"
+  },
+  "keywords": [
+    "button",
+    "vue3",
+    "vue",
+    "vuejs"
+  ],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/topaz-vue.umd.cjs",
   "module": "./dist/topaz-vue.js",
   "exports": {
@@ -17,11 +29,12 @@
     "dev-storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "types": "vue-tsc",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.18",
+    "@heroicons/vue": "^2.0.18"
+  },
+  "peerDependencies": {
     "vue": "^3.3.4"
   },
   "devDependencies": {

@@ -1,27 +1,9 @@
-# topaz-vue
+# Topaz Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+UI component library based on [tailwindcss](https://tailwindcss.com/), [UnoCSS](https://unocss.dev/), [heroicons](https://heroicons.com/). Topaz is a [MIT licensed](https://opensource.org/license/mit/) project that is developed and maintained by [Antônio Zanotti](https://www.linkedin.com/in/antoniozanotti/).
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
+### Installation
 
 ```sh
-npm run dev-storybook
-```
-
-### Storybook for Production
-
-```sh
-npm run build-storybook
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+npm install @topaz-vue/topaz-vue
 ```
