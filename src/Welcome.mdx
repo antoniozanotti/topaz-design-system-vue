@@ -104,6 +104,8 @@ The components was designed to work with these variants:
 
 ### Customization Tips
 
+If you want to change colors, I recommend:
+
 - **accent**: use a vibrant colour.
 - **primary**: use a darker colour than accent variant.
 - **secondary**: use a lighter colour than accent variant.
