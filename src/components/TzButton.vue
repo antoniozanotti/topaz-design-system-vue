@@ -2,46 +2,70 @@
 import * as heroIcons from "@heroicons/vue/20/solid";
 type IconName = keyof typeof heroIcons;
 
-const props = withDefaults(defineProps<{
-  /**
-   * The label of the button.
-   */
-  label?: string;
-  /**
-   * The icon of the button.
-   */
-  iconName?: IconName;
-  /**
-   * Is the icon after the label?
-   */
-  isIconAfterLabel?: boolean;
-  /**
-   * The size of the button.
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * The variant of the button.
-   */
-  variant?: "accent" | "primary" | "secondary" | "negative" | "black" | "white";
-  /**
-   * The style of the button.
-   */
-  style?: "fill" | "outline";
-  /**
-   * Is the button disabled?
-   */
-  isDisabled?: boolean;
-}>(), {
-  isIconAfterLabel: false,
-  size: "medium",
-  variant: "accent",
-  style: "fill",
-  isDisabled: false,
-});
-
-const iconName = computed(() =>
-  props.iconName ? heroIcons[props.iconName] : ""
+const props = withDefaults(
+  defineProps<{
+    /**
+     * The label of the button.
+     */
+    label?: string;
+    /**
+     * The icon of the button.
+     */
+    iconName?: IconName;
+    /**
+     * Is the icon after the label?
+     */
+    isIconAfterLabel?: boolean;
+    /**
+     * The size of the button.
+     */
+    size?: "small" | "medium" | "large";
+    /**
+     * The variant of the button.
+     */
+    variant?:
+      | "accent"
+      | "primary"
+      | "secondary"
+      | "negative"
+      | "black"
+      | "white";
+    /**
+     * The style of the button.
+     */
+    style?: "fill" | "outline";
+    /**
+     * Is the button disabled?
+     */
+    isDisabled?: boolean;
+    /**
+     * Is the button loading?
+     */
+    isLoading?: boolean;
+  }>(),
+  {
+    isIconAfterLabel: false,
+    size: "medium",
+    variant: "accent",
+    style: "fill",
+    isDisabled: false,
+    isLoading: false,
+  }
 );
+
+const label = computed(() => {
+  if(props.isLoading){
+    return "loading";
+  }
+  return props.label ?? "";
+})
+
+const iconName = computed(() => {
+  if (props.isLoading) {
+    return heroIcons["ArrowPathIcon"];
+  }
+  return props.iconName ? heroIcons[props.iconName] : ""
+});
 
 const variantStyleMode = computed(() => {
   if (document.documentElement.classList.contains("dark")) {
@@ -127,7 +151,7 @@ const buttonClasses = computed(() => ({
     props.style == "outline" && variantStyleMode.value == "white",
 
   // is disabled
-  "opacity-50 pointer-events-none": props.isDisabled,
+  "opacity-50 pointer-events-none": props.isDisabled || props.isLoading,
 }));
 
 /* icon classes */
@@ -136,6 +160,9 @@ const iconClasses = computed(() => ({
   "h-18px w-18px lg:h-14px lg:w-14px": props.size == "small",
   "h-30px w-30px lg:h-24px lg:w-24px": props.size == "medium",
   "h-36px w-36px lg:h-29px lg:w-29px": props.size == "large",
+
+  // is loading
+  "animate-spin": props.isLoading,
 }));
 
 /* label classes */

@@ -8,7 +8,14 @@ const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     theme: topaz,
-    backgrounds: { disable: true }
+    backgrounds: {
+      disable: true,
+      default: "green",
+      values: [
+        { name: "orange", value: "#f97316" },
+        { name: "green", value: "#a3e635" },
+      ],
+    },
   },
   decorators: [
     withThemeByClassName<VueRenderer>({

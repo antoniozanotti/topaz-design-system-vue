@@ -43,7 +43,7 @@ That's all! Topaz's components can be imported in your .vue files.
 ```
 # UnoCSS Preset Topaz Vue
 
-You can customize colours, just update the uno.config.ts file.
+You can **customize colours**, just update the uno.config.ts file.
 
 ```ts
 import { defineConfig } from "unocss";
@@ -111,15 +111,14 @@ The components was designed to work with these variants:
 
 # Features
 
+## Components
+Visit the [official documentation](https://topaz-vue.netlify.app/) to see available components.
+
 ## Dark and Light Theme
-If you want to simulate how the component looks in dark theme, you can switch the theme in the toolbar. It uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
+It uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
 
 ## Responsive
-If you want to see how the component looks in different screen sizes, you can switch the screen size in the toolbar. Screens larger than or equal to 1024px will be 20% smaller than its mobile version.
-
-# How to use this documentation
-
-Browse the stories in the sidebar menu to know the different Vue components in the Topaz catalog and see usage examples for every component. You can try change props and share the result with others, just copy the URL anytime.
+Some components on screens larger than or equal to 1024px will be 20% smaller than mobile version.
 
 # Inpired In
 
