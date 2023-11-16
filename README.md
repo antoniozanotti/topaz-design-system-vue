@@ -5,9 +5,9 @@ UI component library based on [tailwindcss](https://tailwindcss.com/), [UnoCSS](
 ### Installation
 
 ```sh
-npm install -D @topaz-vue/topaz-vue
+npm install -D topaz-vue
 ```
 
 ```sh
-pnpm add -D @topaz-vue/topaz-vue
+pnpm add -D topaz-vue
 ```

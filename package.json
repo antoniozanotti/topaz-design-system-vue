@@ -1,5 +1,5 @@
 {
-  "name": "@topaz-vue/topaz-vue",
+  "name": "topaz-vue",
   "description": "UI component library based on tailwindcss, UnoCSS, heroicons. Topaz is a MIT licensed project that is developed and maintained by Antônio Zanotti.",
   "version": "0.0.1",
   "private": false,
@@ -16,7 +16,9 @@
   ],
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "src/**/*.vue",
+    "src/unocss-preset-topaz-vue.ts"
   ],
   "main": "dist/index.umd.cjs",
   "module": "dist/index.js",
@@ -26,8 +28,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
     },
-    "./src/components/TzButton.vue": {
-      "import": "./src/components/TzButton.vue"
+    "./src/unocss-preset-topaz-vue.ts": {
+      "import": "./src/unocss-preset-topaz-vue.ts"
     }
   },
   "scripts": {

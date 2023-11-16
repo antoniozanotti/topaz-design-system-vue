@@ -44,7 +44,7 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "@topaz-vue/topaz-vue",
+      name: "topaz-vue",
       fileName: "index",
     },
     rollupOptions: {

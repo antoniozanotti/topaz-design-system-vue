@@ -3,10 +3,16 @@ UI component library based on [tailwindcss](https://tailwindcss.com/), [UnoCSS](
 
 # Install Topaz Vue
 ```sh
-npm install -D @topaz-vue/topaz-vue
+npm install -D topaz-vue
 ```
 
 Install UnoCSS [(instructions here)](https://unocss.dev/integrations/vite)
+
+Update the main.ts file:
+```ts
+import '@unocss/reset/tailwind.css'
+import 'virtual:uno.css'
+```
 
 Update the uno.config.ts file:
 ```ts
