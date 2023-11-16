@@ -5,7 +5,6 @@ import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import UnoCSS from "unocss/vite";
-import svgLoader from "vite-svg-loader";
 import path, { dirname } from "node:path";
 import dts from "vite-plugin-dts";
 
@@ -33,9 +32,7 @@ export default defineConfig({
     // https://github.com/antfu/unplugin-vue-components
     Components({
       dts: true,
-    }),
-    // https://github.com/jpkleemans/vite-svg-loader
-    svgLoader(),
+    })
   ],
   resolve: {
     alias: {
@@ -47,7 +44,7 @@ export default defineConfig({
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "TopazVue",
+      name: "@topaz-vue/topaz-vue",
       fileName: "index",
     },
     rollupOptions: {
