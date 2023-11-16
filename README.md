@@ -112,13 +112,9 @@ The components was designed to work with these variants:
 # Features
 
 ## Dark and Light Theme
-
-![shows the theme button in the toobar!](/images/dark_theme.png "Dark and Light Theme")
 If you want to simulate how the component looks in dark theme, you can switch the theme in the toolbar. It uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
 
 ## Responsive
-
-![shows the button for change size of the preview in the toobar!](/images/screen_size.png "Screen Size")
 If you want to see how the component looks in different screen sizes, you can switch the screen size in the toolbar. Screens larger than or equal to 1024px will be 20% smaller than its mobile version.
 
 # How to use this documentation
