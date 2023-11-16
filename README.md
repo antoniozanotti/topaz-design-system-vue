@@ -95,30 +95,25 @@ export default defineConfig({
 
 The components was designed to work with these variants:
 
-- "accent": color for greatest emphasis.
-- "primary" color for medium emphasis.
-- "secondary": color for lowest emphasis.
-- "negative": color for emphasizing actions that can be destructive.
-- "black": black on light theme, white on dark theme.
-- "white": white on light theme, black on dark theme.
+- **accent**: color for greatest emphasis.
+- **primary**: color for medium emphasis.
+- **secondary**: color for lowest emphasis.
+- **negative**: color for emphasizing actions that can be destructive.
+- **black**: black on light theme, white on dark theme.
+- **white**: white on light theme, black on dark theme.
 
 ### Customization Tips
 
-- "accent": use a vibrant colour.
-- "primary": use a darker colour than accent variant.
-- "secondary": use a lighter colour than accent variant.
-- "negative", "black", "white": I don't recommend change them.
+- **accent**: use a vibrant colour.
+- **primary**: use a darker colour than accent variant.
+- **secondary**: use a lighter colour than accent variant.
+- **negative**, "black", "white": I don't recommend change them.
 
 # Features
 
-## Components
-Visit the [official documentation](https://topaz-vue.netlify.app/) to see available components.
-
-## Dark and Light Theme
-It uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
-
-## Responsive
-Some components on screens larger than or equal to 1024px will be 20% smaller than mobile version.
+- **Components**: visit the [official documentation](https://topaz-vue.netlify.app/) to see available components.
+- **Dark and Light Theme**: it uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
+- **Responsive**: some components on screens larger than or equal to 1024px will be 20% smaller than mobile version.
 
 # Inpired In
 
