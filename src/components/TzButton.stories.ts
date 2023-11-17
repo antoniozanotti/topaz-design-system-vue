@@ -25,7 +25,7 @@ const meta: Meta<typeof TzButton> = {
     variant: "accent",
     style: "fill",
     isDisabled: false,
-    isLoading: false
+    isLoading: false,
   },
 };
 
@@ -64,7 +64,7 @@ export const LabelIconOnRight: Story = {
 };
 
 export const SizeSmall: Story = {
-  name: "Size Small",
+  name: "Size: Small",
   args: {
     ...LabelIconOnLeft.args,
     size: "small",
@@ -72,7 +72,7 @@ export const SizeSmall: Story = {
 };
 
 export const SizeMedium: Story = {
-  name: "Size Medium",
+  name: "Size: Medium",
   args: {
     ...LabelIconOnLeft.args,
     size: "medium",
@@ -80,7 +80,7 @@ export const SizeMedium: Story = {
 };
 
 export const SizeLarge: Story = {
-  name: "Size Large",
+  name: "Size: Large",
   args: {
     ...LabelIconOnLeft.args,
     size: "large",
@@ -88,7 +88,7 @@ export const SizeLarge: Story = {
 };
 
 export const VariantAccent: Story = {
-  name: "Variant Accent",
+  name: "Variant: Accent",
   args: {
     label: "Shop Now",
     iconName: "ShoppingBagIcon",
@@ -97,7 +97,7 @@ export const VariantAccent: Story = {
 };
 
 export const VariantPrimary: Story = {
-  name: "Variant Primary",
+  name: "Variant: Primary",
   args: {
     label: "Sign up",
     variant: "primary",
@@ -105,7 +105,7 @@ export const VariantPrimary: Story = {
 };
 
 export const VariantSecondary: Story = {
-  name: "Variant Secondary",
+  name: "Variant: Secondary",
   args: {
     label: "Log in",
     variant: "secondary",
@@ -113,7 +113,7 @@ export const VariantSecondary: Story = {
 };
 
 export const VariantNegative: Story = {
-  name: "Variant Negative",
+  name: "Variant: Negative",
   args: {
     label: "Delete Account",
     iconName: "XMarkIcon",
@@ -122,7 +122,7 @@ export const VariantNegative: Story = {
 };
 
 export const VariantBlack: Story = {
-  name: "Variant Black",
+  name: "Variant: Black",
   parameters: {
     backgrounds: {
       disable: false,
@@ -136,7 +136,7 @@ export const VariantBlack: Story = {
 };
 
 export const VariantWhite: Story = {
-  name: "Variant White",
+  name: "Variant: White",
   parameters: {
     backgrounds: {
       disable: false,
@@ -150,7 +150,7 @@ export const VariantWhite: Story = {
 };
 
 export const StyleFill: Story = {
-  name: "Style Fill",
+  name: "Style: Fill",
   parameters: {
     backgrounds: {
       disable: false,
@@ -159,12 +159,12 @@ export const StyleFill: Story = {
   args: {
     iconName: "Bars4Icon",
     label: "Menu",
-    variant: "primary"
+    variant: "primary",
   },
 };
 
 export const StyleOutline: Story = {
-  name: "Style Outline",
+  name: "Style: Outline",
   parameters: {
     backgrounds: {
       disable: false,
@@ -172,7 +172,7 @@ export const StyleOutline: Story = {
   },
   args: {
     ...StyleFill.args,
-    style: "outline"
+    style: "outline",
   },
 };
 
@@ -181,7 +181,7 @@ export const Disable: Story = {
   args: {
     iconName: "LockClosedIcon",
     label: "Locked",
-    isDisabled: true
+    isDisabled: true,
   },
 };
 
@@ -190,6 +190,53 @@ export const Loading: Story = {
   args: {
     iconName: "ArrowPathIcon",
     label: "loading",
-    isLoading: true
+    isLoading: true,
+  },
+};
+
+export const SmallMobile: Story = {
+  name: "Small Mobile",
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+  },
+  args: {
+    label: "Home",
+    iconName: "HomeIcon",
+  },
+};
+
+export const LargeMobile: Story = {
+  name: "Large Mobile",
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile2',
+    },
+  },
+  args: {
+    label: "Home",
+    iconName: "HomeIcon",
+  },
+};
+
+export const Tablet: Story = {
+  name: "Tablet",
+  parameters: {
+    viewport: {
+      defaultViewport: 'tablet',
+    },
+  },
+  args: {
+    label: "Home",
+    iconName: "HomeIcon",
+  },
+};
+
+export const Desktop: Story = {
+  name: "Desktop",
+  args: {
+    label: "Home",
+    iconName: "HomeIcon",
   },
 };
