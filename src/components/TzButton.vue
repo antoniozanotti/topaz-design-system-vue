@@ -97,7 +97,7 @@ const buttonClasses = computed(() => ({
   // size -> small
   "text-sm min-h-11 min-w-11 lg:text-xs lg:min-h-9 lg:min-w-9":
     props.size == "small",
-  // size -> base
+  // size -> medium
   "text-base min-h-12 min-w-12 lg:text-sm lg:min-h-10 lg:min-w-10":
     props.size == "medium",
   // size -> large
