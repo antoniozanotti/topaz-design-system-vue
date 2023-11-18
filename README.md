@@ -115,18 +115,9 @@ If you want to change colors, I recommend:
 
 - **Components**: visit the [official documentation](https://topaz-vue.netlify.app/) to see available components.
 - **Dark and Light Theme**: it uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
-- **Responsive**: some components on screens larger than or equal to 1024px will be 20% smaller than mobile version.
-
-## Components
-Visit the [official documentation](https://topaz-vue.netlify.app/) to see available components.
-
-## Dark and Light Theme
-It uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
+- **Responsive**: some components on screens larger than or equal to 1024px will be ~20% smaller than mobile version.
 
 ***The primary and secondary variations swap with each other. The black and white variations swap with each other.***
-
-## Responsive
-Some components on screens larger than or equal to 1024px will be 20% smaller than mobile version.
 
 # Inpired In
 

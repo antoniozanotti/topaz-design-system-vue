@@ -91,23 +91,23 @@ const buttonClasses = computed(() => ({
   "rounded-full font-medium flex justify-center items-center": true,
 
   // focus
-  "focus:outline focus:outline-offset-2px focus:outline-2px": true,
+  "focus:outline focus:outline-offset-2 focus:outline-2": true,
 
   // size
   // size -> small
-  "text-sm min-h-42px min-w-42px lg:text-xs lg:min-h-34px lg:min-w-34px":
+  "text-sm min-h-11 min-w-11 lg:text-xs lg:min-h-9 lg:min-w-9":
     props.size == "small",
   // size -> base
-  "text-base min-h-60px min-w-60px lg:text-sm lg:min-h-48px lg:min-w-48px":
+  "text-base min-h-12 min-w-12 lg:text-sm lg:min-h-10 lg:min-w-10":
     props.size == "medium",
   // size -> large
-  "text-lg min-h-72px min-w-72px lg:text-base lg:min-h-58px lg:min-w-58px":
+  "text-lg min-h-14 min-w-14 lg:text-base lg:min-h-11 lg:min-w-11":
     props.size == "large",
 
   // padding only with text
-  "px-21px lg:px-17px": props.size == "small" && props.label != "",
-  "px-30px lg:px-24px": props.size == "medium" && props.label != "",
-  "px-36px lg:px-29px": props.size == "large" && props.label != "",
+  "px-6 lg:px-4": props.size == "small" && props.label != "",
+  "px-7 lg:px-5": props.size == "medium" && props.label != "",
+  "px-8 lg:px-6": props.size == "large" && props.label != "",
 
   // fill
   // fill -> accent
@@ -130,7 +130,7 @@ const buttonClasses = computed(() => ({
     props.style == "fill" && variantStyleMode.value == "white",
 
   // outline
-  "outline outline-1px": props.style == "outline",
+  "outline outline-px": props.style == "outline",
   // outline -> accent
   "outline-accent hover:outline-accent-600 active:outline-accent-700 active: text-accent":
     props.style == "outline" && variantStyleMode.value == "accent",
@@ -157,9 +157,9 @@ const buttonClasses = computed(() => ({
 /* icon classes */
 const iconClasses = computed(() => ({
   // size
-  "h-18px w-18px lg:h-14px lg:w-14px": props.size == "small",
-  "h-30px w-30px lg:h-24px lg:w-24px": props.size == "medium",
-  "h-36px w-36px lg:h-29px lg:w-29px": props.size == "large",
+  "h-6 w-6 lg:h-4 lg:w-4": props.size == "small",
+  "h-7 w-7 lg:h-5 lg:w-5": props.size == "medium",
+  "h-8 w-8 lg:h-6 lg:w-6": props.size == "large",
 
   // is loading
   "animate-spin": props.isLoading,
@@ -168,8 +168,8 @@ const iconClasses = computed(() => ({
 /* label classes */
 const labelClasses = computed(() => ({
   // padding between icon and text
-  "pl-7px": iconName.value != "" && !props.isIconAfterLabel,
-  "pr-7px": iconName.value != "" && props.isIconAfterLabel,
+  "pl-1.5": iconName.value != "" && !props.isIconAfterLabel,
+  "pr-1.5": iconName.value != "" && props.isIconAfterLabel,
 }));
 </script>
 

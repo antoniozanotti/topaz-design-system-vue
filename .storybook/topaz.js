@@ -3,7 +3,7 @@ import topazBrand from './topaz-brand.svg?url'
 
 export default create({
   base: 'light',
-  brandTitle: 'Topaz Design System Vue',
+  brandTitle: 'Topaz Vue',
   brandUrl: '/',
   brandImage: topazBrand,
   brandTarget: '_self',
