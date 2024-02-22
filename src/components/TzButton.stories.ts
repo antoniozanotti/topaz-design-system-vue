@@ -10,22 +10,19 @@ const meta: Meta<typeof TzButton> = {
   tags: ["autodocs"],
   argTypes: {
     iconName: { control: "select", options: ["", ...Object.keys(heroIcons)] },
-    size: { control: "select", options: ["small", "medium", "large"] },
     variant: {
       control: "select",
-      options: ["accent", "primary", "secondary", "negative", "black", "white"],
+      options: ["accent", "primary", "secondary", "negative", "dark", "light"],
     },
-    style: { control: "select", options: ["fill", "outline"] },
   },
   args: {
     label: "Button",
     iconName: undefined,
     isIconAfterLabel: false,
-    size: "medium",
     variant: "accent",
-    style: "fill",
-    isDisabled: false,
+    filled: true,
     isLoading: false,
+    disabled: false
   },
 };
 
@@ -63,30 +60,6 @@ export const LabelIconOnRight: Story = {
   },
 };
 
-export const SizeSmall: Story = {
-  name: "Size: Small",
-  args: {
-    ...LabelIconOnLeft.args,
-    size: "small",
-  },
-};
-
-export const SizeMedium: Story = {
-  name: "Size: Medium",
-  args: {
-    ...LabelIconOnLeft.args,
-    size: "medium",
-  },
-};
-
-export const SizeLarge: Story = {
-  name: "Size: Large",
-  args: {
-    ...LabelIconOnLeft.args,
-    size: "large",
-  },
-};
-
 export const VariantAccent: Story = {
   name: "Variant: Accent",
   args: {
@@ -121,8 +94,8 @@ export const VariantNegative: Story = {
   },
 };
 
-export const VariantBlack: Story = {
-  name: "Variant: Black",
+export const VariantDark: Story = {
+  name: "Variant: Dark",
   parameters: {
     backgrounds: {
       disable: false,
@@ -131,12 +104,12 @@ export const VariantBlack: Story = {
   args: {
     label: "Share",
     iconName: "ShareIcon",
-    variant: "black",
+    variant: "dark",
   },
 };
 
-export const VariantWhite: Story = {
-  name: "Variant: White",
+export const VariantLight: Story = {
+  name: "Variant: Light",
   parameters: {
     backgrounds: {
       disable: false,
@@ -145,12 +118,12 @@ export const VariantWhite: Story = {
   args: {
     label: "Share",
     iconName: "ShareIcon",
-    variant: "white",
+    variant: "light",
   },
 };
 
-export const StyleFill: Story = {
-  name: "Style: Fill",
+export const FilledTrue: Story = {
+  name: "Filled: true",
   parameters: {
     backgrounds: {
       disable: false,
@@ -163,16 +136,16 @@ export const StyleFill: Story = {
   },
 };
 
-export const StyleOutline: Story = {
-  name: "Style: Outline",
+export const FilledFalse: Story = {
+  name: "Filled: false",
   parameters: {
     backgrounds: {
       disable: false,
     },
   },
   args: {
-    ...StyleFill.args,
-    style: "outline",
+    ...FilledTrue.args,
+    filled: false,
   },
 };
 
@@ -181,7 +154,7 @@ export const Disable: Story = {
   args: {
     iconName: "LockClosedIcon",
     label: "Locked",
-    isDisabled: true,
+    disabled: true,
   },
 };
 
@@ -198,7 +171,7 @@ export const SmallMobile: Story = {
   name: "Small Mobile",
   parameters: {
     viewport: {
-      defaultViewport: 'mobile1',
+      defaultViewport: "mobile1",
     },
   },
   args: {
@@ -211,7 +184,7 @@ export const LargeMobile: Story = {
   name: "Large Mobile",
   parameters: {
     viewport: {
-      defaultViewport: 'mobile2',
+      defaultViewport: "mobile2",
     },
   },
   args: {
@@ -224,7 +197,7 @@ export const Tablet: Story = {
   name: "Tablet",
   parameters: {
     viewport: {
-      defaultViewport: 'tablet',
+      defaultViewport: "tablet",
     },
   },
   args: {

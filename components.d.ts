@@ -8,5 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     TzButton: typeof import('./src/components/TzButton.vue')['default']
+    TzIcon: typeof import('./src/components/TzIcon.vue')['default']
+    TzStyles: typeof import('./src/components/TzStyles.vue')['default']
   }
 }

@@ -1,190 +1,118 @@
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/20/solid";
-type IconName = keyof typeof heroIcons;
+import { useVariantClasses, useFocusClasses } from "./TzStyles.vue";
+import TzIcon, { TzIconVariants } from "./TzIcon.vue";
 
-const props = withDefaults(
-  defineProps<{
-    /**
-     * The label of the button.
-     */
-    label?: string;
-    /**
-     * The icon of the button.
-     */
-    iconName?: IconName;
-    /**
-     * Is the icon after the label?
-     */
-    isIconAfterLabel?: boolean;
-    /**
-     * The size of the button.
-     */
-    size?: "small" | "medium" | "large";
-    /**
-     * The variant of the button.
-     */
-    variant?:
-      | "accent"
-      | "primary"
-      | "secondary"
-      | "negative"
-      | "black"
-      | "white";
-    /**
-     * The style of the button.
-     */
-    style?: "fill" | "outline";
-    /**
-     * Is the button disabled?
-     */
-    isDisabled?: boolean;
-    /**
-     * Is the button loading?
-     */
-    isLoading?: boolean;
-  }>(),
-  {
-    isIconAfterLabel: false,
-    size: "medium",
-    variant: "accent",
-    style: "fill",
-    isDisabled: false,
-    isLoading: false,
-  }
-);
+export interface TzButtonProps {
+  label?: string;
+  iconName?: keyof typeof heroIcons;
+  isIconAfterLabel?: boolean;
+  variant?: "accent" | "primary" | "secondary" | "negative" | "dark" | "light";
+  filled?: boolean;
+  isLoading?: boolean;
+  disabled?: boolean;
+}
 
-const label = computed(() => {
-  if(props.isLoading){
-    return "loading";
-  }
-  return props.label ?? "";
-})
-
-const iconName = computed(() => {
-  if (props.isLoading) {
-    return heroIcons["ArrowPathIcon"];
-  }
-  return props.iconName ? heroIcons[props.iconName] : ""
-});
-
-const variantStyleMode = computed(() => {
-  if (document.documentElement.classList.contains("dark")) {
-    if (props.variant == "primary") {
-      return "secondary";
-    }
-    if (props.variant == "secondary") {
-      return "primary";
-    }
-    if (props.variant == "black") {
-      return "white";
-    }
-    if (props.variant == "white") {
-      return "black";
-    }
-  }
-  return props.variant;
+const props = withDefaults(defineProps<TzButtonProps>(), {
+  isIconAfterLabel: false,
+  variant: "accent",
+  filled: true,
+  isLoading: false,
+  disabled: false,
 });
 
 /* button classes */
-const buttonClasses = computed(() => ({
-  // default
-  "rounded-full font-medium flex justify-center items-center": true,
+let buttonOtherClasses =
+  "rounded-full font-medium flex gap-x-2 justify-center place-items-center";
 
-  // focus
-  "focus:outline focus:outline-offset-2 focus:outline-2": true,
+// focus
+let focusClasses = useFocusClasses();
 
-  // size
-  // size -> small
-  "text-sm min-h-11 min-w-11 lg:text-xs lg:min-h-9 lg:min-w-9":
-    props.size == "small",
-  // size -> medium
-  "text-base min-h-12 min-w-12 lg:text-sm lg:min-h-10 lg:min-w-10":
-    props.size == "medium",
-  // size -> large
-  "text-lg min-h-14 min-w-14 lg:text-base lg:min-h-11 lg:min-w-11":
-    props.size == "large",
+// size
+const buttonSizeClasses = computed(() => {
+  let classes =
+    "h-[28px] sm:h-[38px] lg:h-[48px] min-w-[28px] sm:min-w-[38px] lg:min-w-[48px]";
+  if (props.label) {
+    classes += " px-[16px] sm:px-[27px] lg:px-[36px]";
+  }
+  return classes;
+});
 
-  // padding only with text
-  "px-6 lg:px-4": props.size == "small" && props.label != "",
-  "px-7 lg:px-5": props.size == "medium" && props.label != "",
-  "px-8 lg:px-6": props.size == "large" && props.label != "",
+// variants and filled
+let variantClasses = computed(() => {
+  return useVariantClasses(props.variant, props.filled);
+});
 
-  // fill
-  // fill -> accent
-  "bg-accent hover:bg-accent-600 active:bg-accent-700 text-light dark:text-dark focus:outline-accent":
-    props.style == "fill" && variantStyleMode.value == "accent",
-  // fill -> primary
-  "bg-primary hover:bg-primary-600 active:bg-primary-700 text-light focus:outline-primary":
-    props.style == "fill" && variantStyleMode.value == "primary",
-  // fill -> secondary
-  "bg-secondary hover:bg-secondary-600 active:bg-secondary-700 text-primary focus:outline-secondary":
-    props.style == "fill" && variantStyleMode.value == "secondary",
-  // fill -> negative
-  "bg-negative hover:bg-negative-600 active:bg-negative-700 text-light dark:text-dark focus:outline-negative":
-    props.style == "fill" && variantStyleMode.value == "negative",
-  // fill -> black
-  "bg-dark hover:bg-dark-700 active:bg-dark-600 text-light focus:outline-dark":
-    props.style == "fill" && variantStyleMode.value == "black",
-  // fill -> white
-  "bg-light hover:bg-light-600 active:bg-light-700 text-dark focus:outline-light":
-    props.style == "fill" && variantStyleMode.value == "white",
-
-  // outline
-  "outline outline-px": props.style == "outline",
-  // outline -> accent
-  "outline-accent hover:outline-accent-600 active:outline-accent-700 active: text-accent":
-    props.style == "outline" && variantStyleMode.value == "accent",
-  // outline -> primary
-  "outline-primary hover:outline-primary-600 active:outline-primary-700 text-primary":
-    props.style == "outline" && variantStyleMode.value == "primary",
-  // outline -> secondary
-  "outline-secondary hover:outline-secondary-600 active:outline-secondary-700 text-primary":
-    props.style == "outline" && variantStyleMode.value == "secondary",
-  // outline -> negative
-  "outline-negative hover:outline-negative-600 active:outline-negative-700 text-negative":
-    props.style == "outline" && variantStyleMode.value == "negative",
-  // outline -> black
-  "outline-dark hover:outline-dark-700 active:outline-dark-600 text-dark":
-    props.style == "outline" && variantStyleMode.value == "black",
-  // outline -> white
-  "outline-light hover:outline-light-600 active:outline-light-700 text-light":
-    props.style == "outline" && variantStyleMode.value == "white",
-
-  // is disabled
-  "opacity-50 pointer-events-none": props.isDisabled || props.isLoading,
-}));
+// is disabled
+const buttonDisabledClasses = computed(() => {
+  return props.disabled || props.isLoading
+    ? "opacity-50 pointer-events-none"
+    : "";
+});
 
 /* icon classes */
-const iconClasses = computed(() => ({
-  // size
-  "h-6 w-6 lg:h-4 lg:w-4": props.size == "small",
-  "h-7 w-7 lg:h-5 lg:w-5": props.size == "medium",
-  "h-8 w-8 lg:h-6 lg:w-6": props.size == "large",
+const iconClasses = computed(() => {
+  let classes = "";
+  if (props.isIconAfterLabel) {
+    classes += " order-last";
+  }
+  if (props.isLoading) {
+    classes += " animate-spin";
+  }
+  return classes;
+});
 
-  // is loading
-  "animate-spin": props.isLoading,
-}));
+// label
+if (props.isLoading) {
+  props.label = "loading";
+}
 
-/* label classes */
-const labelClasses = computed(() => ({
-  // padding between icon and text
-  "pl-1.5": iconName.value != "" && !props.isIconAfterLabel,
-  "pr-1.5": iconName.value != "" && props.isIconAfterLabel,
-}));
+// icon
+if (props.isLoading) {
+  props.iconName = "ArrowPathIcon";
+}
+
+// icon variant
+const iconVariant = computed(() => {
+  let classes: (typeof TzIconVariants)[number] = props.variant;
+  if (props.filled) {
+    switch (props.variant) {
+      case "accent":
+        classes = "inverse-accent";
+        break;
+      case "primary":
+        classes = "inverse-primary";
+        break;
+      case "secondary":
+        classes = "inverse-secondary";
+        break;
+      case "negative":
+        classes = "inverse-negative";
+        break;
+      case "dark":
+        classes = "inverse-dark";
+        break;
+      case "light":
+        classes = "inverse-light";
+        break;
+    }
+  }
+  return classes;
+});
 </script>
 
 <template>
-  <button :class="buttonClasses" :disabled="props.isDisabled">
-    <component
-      :is="iconName"
+  <button
+    :class="`${buttonOtherClasses} ${focusClasses} ${buttonSizeClasses} ${variantClasses} ${buttonDisabledClasses}`"
+    :disabled="disabled"
+  >
+    <TzIcon
+      :iconName="iconName"
+      :variant="iconVariant"
       :class="iconClasses"
-      v-if="iconName && !props.isIconAfterLabel"
+      v-if="iconName"
     />
-    <span v-if="props.label" :class="labelClasses">{{ label }}</span>
-    <component
-      :is="iconName"
-      :class="iconClasses"
-      v-if="iconName && props.isIconAfterLabel"
-    />
+    <span v-if="label">{{ label }}</span>
   </button>
 </template>
+../composables/useStyles./useStyles.ts
