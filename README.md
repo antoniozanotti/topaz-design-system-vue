@@ -5,7 +5,7 @@ UI component library based on [tailwindcss](https://tailwindcss.com/), [UnoCSS](
 # Install Topaz Vue
 
 ```sh
-npm install -D topaz-vue
+npm i -D topaz-vue
 ```
 
 Install UnoCSS [(instructions here)](https://unocss.dev/integrations/vite)
@@ -124,3 +124,7 @@ If you want to change colors, I recommend:
 - [Spectrum](https://spectrum.adobe.com/), Adobe’s design system
 - [Vitamin](https://github.com/Decathlon/vitamin-web), Decathlon's design system
 - [Vuetify](https://github.com/vuetifyjs/vuetify), Vue Component Framework
+
+# License
+
+MIT © [antoniozanotti](https://github.com/antoniozanotti)
