@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzIcon, { TzIconVariants } from "./TzIcon.vue";
+import TzIcon, { TzIconVariants } from "../src/components/TzIcon.vue";
 import * as heroIcons from "@heroicons/vue/24/outline";
 
 /**
