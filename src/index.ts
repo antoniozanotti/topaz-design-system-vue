@@ -1,6 +1,7 @@
 
 import TzButton from "./components/TzButton.vue";
-import TzIcon from "./components/TzIcon.vue";
 import TzHeading from "./components/TzHeading.vue";
+import TzIcon from "./components/TzIcon.vue";
+import TzInput from "./components/TzInput.vue";
 
-export { TzButton, TzIcon, TzHeading };
+export { TzButton, TzHeading, TzIcon, TzInput };
