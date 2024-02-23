@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 import TzIcon from "./TzIcon.vue";
 
-export interface TzToggleThemeProps {}
+export interface TzToggleThemeProps {
+  initialTheme?: "dark" | "";
+}
 
-const theme = ref(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
+const props = withDefaults(defineProps<TzToggleThemeProps>(), {
+  initialTheme: "dark"
+});
+
+const theme = ref(props.initialTheme=="dark" ? 'dark' : '');
 function handleClick() {
   if (theme.value == 'dark') {
     document.documentElement.classList.remove('dark');
