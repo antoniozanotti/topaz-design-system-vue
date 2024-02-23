@@ -1,0 +1,48 @@
+import type { Meta, StoryObj } from "@storybook/vue3";
+import TzToggleTheme from "../src/components/TzToggleTheme.vue";
+
+/**
+ * The TzToggleTheme component.
+ */
+const meta: Meta<typeof TzToggleTheme> = {
+  component: TzToggleTheme,
+  tags: ["autodocs"]
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const toggle: Story = {
+  name: "default"
+};
+
+export const SmallMobile: Story = {
+  name: "Small Mobile",
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile1",
+    },
+  }
+};
+
+export const LargeMobile: Story = {
+  name: "Large Mobile",
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile2",
+    },
+  }
+};
+
+export const Tablet: Story = {
+  name: "Tablet",
+  parameters: {
+    viewport: {
+      defaultViewport: "tablet",
+    },
+  }
+};
+
+export const Desktop: Story = {
+  name: "Desktop"
+};

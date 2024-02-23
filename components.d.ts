@@ -13,5 +13,6 @@ declare module 'vue' {
     TzInput: typeof import('./src/components/TzInput.vue')['default']
     TzStyles: typeof import('./src/components/TzStyles.vue')['default']
     TzTextarea: typeof import('./src/components/TzTextarea.vue')['default']
+    TzToggleTheme: typeof import('./src/components/TzToggleTheme.vue')['default']
   }
 }

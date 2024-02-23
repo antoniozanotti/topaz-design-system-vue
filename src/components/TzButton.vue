@@ -39,7 +39,7 @@ const buttonSizeClasses = computed(() => {
 });
 
 // variants and filled
-let variantClasses = computed(() => {
+const variantClasses = computed(() => {
   return useVariantClasses(props.variant, props.filled);
 });
 
