@@ -43,7 +43,7 @@ That's all! Topaz's components can be imported in your .vue files.
 ```
 # UnoCSS Preset Topaz Vue
 
-You can **customize colours**, just update the uno.config.ts file.
+You can **customize colours** and **font sizes**, just update the uno.config.ts file.
 
 ```ts
 import { defineConfig } from "unocss";
@@ -127,21 +127,35 @@ export default defineConfig({
 
 The components was designed to work with these variants:
 
-- **accent**: color for greatest emphasis.
-- **primary**: color for medium emphasis.
-- **secondary**: color for lowest emphasis.
-- **negative**: color for emphasizing actions that can be destructive.
-- **black**: black on light theme, white on dark theme.
-- **white**: white on light theme, black on dark theme.
+Light Theme:
+- **accent**: colors for greatest emphasis.
+- **primary**: colors for medium emphasis.
+- **secondary**: colors for lowest emphasis.
+- **negative**: colors for emphasizing actions that can be destructive.
+- **dark**: light colors.
+- **light**: dark colors.
+- **inverse-accent**: text color above a accent background.
+- **inverse-primary**: text color above a primary background.
+- **inverse-secondary**: text color above a secondary background.
+- **inverse-negative**: text color above a negative background.
+- **inverse-dark**: text color above a dark background.
+- **inverse-light**: text color above a light background.
 
-### Customization Tips
+Dark Theme:
+- **dark-accent**: accent colors on dark theme.
+- **dark-primary**: primary colors on dark theme.
+- **dark-secondary**: secondary colors on dark theme.
+- **dark-negative**: negative colors on dark theme.
+- **dark-dark**: light colors.
+- **dark-light**: dark colors.
+- **inverse-dark-accent**: text color above a accent background on dark theme.
+- **inverse-dark-primary**: text color above a primary background on dark theme.
+- **inverse-dark-secondary**: text color above a secondary background on dark theme.
+- **inverse-dark-negative**: text color above a negative background on dark theme.
+- **inverse-dark-dark**: text color above a dark background on dark theme.
+- **inverse-dark-light**: text color above a light background on dark theme.
 
-If you want to change colors, I recommend:
-
-- **accent**: use a vibrant colour.
-- **primary**: use a darker colour than accent variant.
-- **secondary**: use a lighter colour than accent variant.
-- **negative**, "black", "white": I don't recommend change them.
+**_You can use a [color contrast checker](https://colorkit.co/contrast-checker/) to help calculate the contrast. The colours dark-2 and dark-dark-2 are used for background._**
 
 # Features
 
@@ -149,14 +163,10 @@ If you want to change colors, I recommend:
 - **Dark and Light Theme**: it uses [class strategy](https://tailwindcss.com/docs/dark-mode) of [tailwindcss](https://tailwindcss.com/).
 - **Responsive**: some components on screens larger than or equal to 1024px will be ~20% smaller than mobile version.
 
-***The primary and secondary variations swap with each other. The black and white variations swap with each other.***
+**_The colours swap with each other by 'dark-' prefix._**
 
 # Inpired In
 
 - [Spectrum](https://spectrum.adobe.com/), Adobe’s design system
 - [Vitamin](https://github.com/Decathlon/vitamin-web), Decathlon's design system
 - [Vuetify](https://github.com/vuetifyjs/vuetify), Vue Component Framework
-
-# License
-
-MIT © [antoniozanotti](https://github.com/antoniozanotti)
