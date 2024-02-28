@@ -34,13 +34,13 @@ const headingClasses = computed(() => {
 
   switch (props.size) {
     case "small":
-      classes = "text-c5 md:text-c6 lg:text-c8 xl:text-c9";
+      classes = "text-c6 md:text-c7 lg:text-c8 xl:text-c9";
       break;
     case "medium":
-      classes = "text-c6 sm:text-c7 lg:text-c10";
+      classes = "text-c7 sm:text-c8 lg:text-c10";
       break;
     default:
-      classes = "text-c8 sm:text-c9 md:text-c10 lg:text-c11";
+      classes = "text-c9 sm:text-c10 lg:text-c11";
       break;
   }
 

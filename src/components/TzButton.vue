@@ -30,10 +30,9 @@ let focusClasses = useFocusClasses();
 
 // size
 const buttonSizeClasses = computed(() => {
-  let classes =
-    "h-[28px] sm:h-[38px] lg:h-[48px] min-w-[28px] sm:min-w-[38px] lg:min-w-[48px]";
+  let classes = "h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px]";
   if (props.label) {
-    classes += " px-[16px] sm:px-[27px] lg:px-[36px]";
+    classes += " px-[27px] lg:px-[36px]";
   }
   return classes;
 });

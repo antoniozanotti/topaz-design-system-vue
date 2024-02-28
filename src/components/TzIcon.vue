@@ -28,8 +28,7 @@ const props = withDefaults(defineProps<TzIconProps>(), {
 });
 
 // size
-let sizeClasses =
-  "w-[12px] h-[12px] sm:w-[16px] sm:h-[16px] lg:w-[20px] lg:h-[20px]";
+let sizeClasses = "w-[16px] h-[16px] lg:w-[20px] lg:h-[20px]";
 
 // variants
 const variantClasses = computed(() => {
