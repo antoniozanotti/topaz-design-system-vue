@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzHeading from "../src/components/TzHeading.vue";
+import TzHeading from "./TzHeading.vue";
 
 /**
  * The TzHeading component.

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/20/solid";
-import { useVariantClasses, useFocusClasses } from "./TzStyles.vue";
-import TzIcon, { TzIconVariants } from "./TzIcon.vue";
+import { useVariantClasses, useFocusClasses } from "../TzStyles/TzStyles.vue";
+import TzIcon, { TzIconVariants } from "../TzIcon/TzIcon.vue";
 
 export interface TzButtonProps {
   label?: string;

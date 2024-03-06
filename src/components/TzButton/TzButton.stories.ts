@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzButton from "../src/components/TzButton.vue";
+import TzButton from "./TzButton.vue";
 import * as heroIcons from "@heroicons/vue/20/solid";
 
 /**

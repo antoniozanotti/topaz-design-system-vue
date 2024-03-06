@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import TzIcon from "./TzIcon.vue";
+import TzIcon from "../TzIcon/TzIcon.vue";
 
 export interface TzToggleThemeProps {
   initialTheme?: "dark" | "";

@@ -7,12 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    TzButton: typeof import('./src/components/TzButton.vue')['default']
-    TzHeading: typeof import('./src/components/TzHeading.vue')['default']
-    TzIcon: typeof import('./src/components/TzIcon.vue')['default']
-    TzInput: typeof import('./src/components/TzInput.vue')['default']
-    TzStyles: typeof import('./src/components/TzStyles.vue')['default']
-    TzTextarea: typeof import('./src/components/TzTextarea.vue')['default']
-    TzToggleTheme: typeof import('./src/components/TzToggleTheme.vue')['default']
+    TzButton: typeof import('./src/components/TzButton/TzButton.vue')['default']
+    TzHeading: typeof import('./src/components/TzHeading/TzHeading.vue')['default']
+    TzIcon: typeof import('./src/components/TzIcon/TzIcon.vue')['default']
+    TzInput: typeof import('./src/components/TzInput/TzInput.vue')['default']
+    TzStyles: typeof import('./src/components/TzStyles/TzStyles.vue')['default']
+    TzTextarea: typeof import('./src/components/TzTextarea/TzTextarea.vue')['default']
+    TzToggleTheme: typeof import('./src/components/TzToggleTheme/TzToggleTheme.vue')['default']
   }
 }

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzTextarea from "../src/components/TzTextarea.vue";
+import TzInput from "./TzInput.vue";
 
 /**
- * The TzTextarea component has styles for hover and focus events, try it.
+ * The TzInput component has styles for hover and focus events, try it.
  */
-const meta: Meta<typeof TzTextarea> = {
-  component: TzTextarea,
+const meta: Meta<typeof TzInput> = {
+  component: TzInput,
   tags: ["autodocs"],
   argTypes: {
     variant: {
@@ -14,7 +14,6 @@ const meta: Meta<typeof TzTextarea> = {
     }
   },
   args: {
-    rows: 7,
     variant: "accent",
     filled: true,
   },

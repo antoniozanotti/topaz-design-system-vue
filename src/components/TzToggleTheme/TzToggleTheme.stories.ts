@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzToggleTheme from "../src/components/TzToggleTheme.vue";
+import TzToggleTheme from "./TzToggleTheme.vue";
 
 /**
  * The TzToggleTheme component.
