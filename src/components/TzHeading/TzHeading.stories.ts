@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzHeading from "./TzHeading.vue";
+import TzHeading, {
+  TzHeadingLevels,
+  TzHeadingSizes,
+  TzHeadingVariants,
+} from "./TzHeading.vue";
 
 /**
  * The TzHeading component.
@@ -10,45 +14,26 @@ const meta: Meta<typeof TzHeading> = {
   argTypes: {
     level: {
       control: "select",
-      options: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      options: ["", ...TzHeadingLevels],
     },
     size: {
       control: "select",
-      options: ["small", "medium", "large", "x_large"],
+      options: ["", ...TzHeadingSizes],
     },
     variant: {
       control: "select",
-      options: [
-        "accent",
-        "accent-1",
-        "accent-2",
-        "primary",
-        "primary-1",
-        "primary-2",
-        "secondary",
-        "secondary-1",
-        "secondary-2",
-        "negative",
-        "negative-1",
-        "negative-2",
-        "dark",
-        "dark-1",
-        "dark-2",
-        "light",
-        "light-1",
-        "light-2"
-      ]
+      options: ["", ...TzHeadingVariants],
     },
     default: {
-      control: 'text',
-      description: 'Slot Content'
-    }
+      control: "text",
+      description: "Slot Content",
+    },
   },
   args: {
     level: "h1",
     size: "x_large",
     variant: "accent",
-    default: "Heading"
+    default: "Heading",
   },
 };
 
@@ -56,7 +41,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const h1: Story = {
-  name: "h1, x_large, accent"
+  name: "h1, x_large, accent",
 };
 
 export const h2: Story = {
@@ -64,7 +49,7 @@ export const h2: Story = {
   args: {
     level: "h2",
     size: "large",
-    variant: "accent-1"
+    variant: "accent-1",
   },
 };
 
@@ -73,7 +58,7 @@ export const h3: Story = {
   args: {
     level: "h3",
     size: "medium",
-    variant: "accent-2"
+    variant: "accent-2",
   },
 };
 
@@ -82,7 +67,7 @@ export const h4: Story = {
   args: {
     level: "h4",
     size: "small",
-    variant: "secondary"
+    variant: "secondary",
   },
 };
 
@@ -92,7 +77,7 @@ export const SmallMobile: Story = {
     viewport: {
       defaultViewport: "mobile1",
     },
-  }
+  },
 };
 
 export const LargeMobile: Story = {
@@ -101,7 +86,7 @@ export const LargeMobile: Story = {
     viewport: {
       defaultViewport: "mobile2",
     },
-  }
+  },
 };
 
 export const Tablet: Story = {
@@ -110,9 +95,9 @@ export const Tablet: Story = {
     viewport: {
       defaultViewport: "tablet",
     },
-  }
+  },
 };
 
 export const Desktop: Story = {
-  name: "Desktop"
+  name: "Desktop",
 };

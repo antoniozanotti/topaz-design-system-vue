@@ -1,3 +1,15 @@
+<script lang="ts">
+export const TzButtonVariants = [
+  "accent",
+  "primary",
+  "secondary",
+  "negative",
+  "dark",
+  "light",
+] as const;
+export type TzButtonVariant = (typeof TzButtonVariants)[number];
+</script>
+
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/20/solid";
 import { useVariantClasses, useFocusClasses } from "../TzStyles/TzStyles.vue";
@@ -7,7 +19,7 @@ export interface TzButtonProps {
   label?: string;
   iconName?: keyof typeof heroIcons;
   isIconAfterLabel?: boolean;
-  variant?: "accent" | "primary" | "secondary" | "negative" | "dark" | "light";
+  variant?: TzButtonVariant;
   filled?: boolean;
   isLoading?: boolean;
   disabled?: boolean;
@@ -62,14 +74,14 @@ const iconClasses = computed(() => {
 });
 
 // label
-if (props.isLoading) {
-  props.label = "loading";
-}
+const label = computed(() => {
+  return props.isLoading ? "loading" : props.label;
+});
 
 // icon
-if (props.isLoading) {
-  props.iconName = "ArrowPathIcon";
-}
+const iconName = computed(() => {
+  return props.isLoading ? "ArrowPathIcon" : props.iconName;
+});
 
 // icon variant
 const iconVariant = computed(() => {
@@ -103,7 +115,7 @@ const iconVariant = computed(() => {
 <template>
   <button
     :class="`${buttonOtherClasses} ${focusClasses} ${buttonSizeClasses} ${variantClasses} ${buttonDisabledClasses}`"
-    :disabled="disabled"
+    :disabled="`${disabled || isLoading}`"
   >
     <TzIcon
       :iconName="iconName"

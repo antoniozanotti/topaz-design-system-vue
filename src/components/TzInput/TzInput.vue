@@ -1,8 +1,20 @@
+<script lang="ts">
+export const TzInputVariants = [
+  "accent",
+  "primary",
+  "secondary",
+  "negative",
+  "dark",
+  "light",
+] as const;
+export type TzInputVariant = (typeof TzInputVariants)[number];
+</script>
+
 <script lang="ts" setup>
 import { useVariantClasses, useFocusClasses } from "../TzStyles/TzStyles.vue";
 
 export interface TzInputProps {
-  variant?: "accent" | "primary" | "secondary" | "negative" | "dark" | "light";
+  variant?: TzInputVariant;
   filled?: boolean;
 }
 

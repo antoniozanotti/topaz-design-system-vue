@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzInput from "./TzInput.vue";
+import TzInput, { TzInputVariants } from "./TzInput.vue";
 
 /**
  * The TzInput component has styles for hover and focus events, try it.
@@ -10,8 +10,8 @@ const meta: Meta<typeof TzInput> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["accent", "primary", "secondary", "negative", "dark", "light"],
-    }
+      options: ["", ...TzInputVariants],
+    },
   },
   args: {
     variant: "accent",
@@ -33,7 +33,7 @@ export const VariantAccentOutline: Story = {
   name: "Variant: Accent, Filled: False",
   args: {
     variant: "accent",
-    filled: false
+    filled: false,
   },
 };
 
@@ -88,7 +88,7 @@ export const SmallMobile: Story = {
     viewport: {
       defaultViewport: "mobile1",
     },
-  }
+  },
 };
 
 export const LargeMobile: Story = {
@@ -97,7 +97,7 @@ export const LargeMobile: Story = {
     viewport: {
       defaultViewport: "mobile2",
     },
-  }
+  },
 };
 
 export const Tablet: Story = {
@@ -106,9 +106,9 @@ export const Tablet: Story = {
     viewport: {
       defaultViewport: "tablet",
     },
-  }
+  },
 };
 
 export const Desktop: Story = {
-  name: "Desktop"
+  name: "Desktop",
 };

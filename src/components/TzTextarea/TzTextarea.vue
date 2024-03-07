@@ -1,9 +1,21 @@
+<script lang="ts">
+export const TzTextareaVariants = [
+  "accent",
+  "primary",
+  "secondary",
+  "negative",
+  "dark",
+  "light",
+] as const;
+export type TzTextareaVariant = (typeof TzTextareaVariants)[number];
+</script>
+
 <script lang="ts" setup>
 import { useVariantClasses, useFocusClasses } from "../TzStyles/TzStyles.vue";
 
 export interface TzTextareaProps {
   rows?: number;
-  variant?: "accent" | "primary" | "secondary" | "negative" | "dark" | "light";
+  variant?: TzTextareaVariant;
   filled?: boolean;
 }
 

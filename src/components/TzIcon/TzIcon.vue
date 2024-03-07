@@ -13,6 +13,7 @@ export const TzIconVariants = [
   "light",
   "inverse-light",
 ] as const;
+export type TzIconVariant = (typeof TzIconVariants)[number];
 </script>
 
 <script lang="ts" setup>
