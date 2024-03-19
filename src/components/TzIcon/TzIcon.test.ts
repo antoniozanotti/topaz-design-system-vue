@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/vue";
+import { render } from "@testing-library/vue";
 import "@testing-library/jest-dom/vitest";
 import TzIcon from "./TzIcon.vue";
 import type { TzIconVariant } from "./TzIcon.vue";
