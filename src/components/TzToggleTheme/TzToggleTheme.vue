@@ -1,24 +1,9 @@
 <script lang="ts" setup>
 import TzIcon from "../TzIcon/TzIcon.vue";
 
-export interface TzToggleThemeProps {
-  initialTheme?: "dark" | "";
-}
+export interface TzToggleThemeProps {}
 
-const props = withDefaults(defineProps<TzToggleThemeProps>(), {
-  initialTheme: "dark"
-});
-
-const theme = ref(props.initialTheme=="dark" ? 'dark' : '');
-function handleClick() {
-  if (theme.value == 'dark') {
-    document.documentElement.classList.remove('dark');
-    theme.value = '';
-  } else {
-    document.documentElement.classList.add('dark');
-    theme.value = 'dark';
-  }
-};
+const props = withDefaults(defineProps<TzToggleThemeProps>(), {});
 
 let buttonBackground = "bg-secondary dark:bg-dark-secondary";
 let buttonSize = "w-[104px] h-[38px] lg:w-[132px] lg:h-[48px]";
@@ -32,19 +17,11 @@ let spanPosition = "self-center left-[40px] dark:left-[3px] lg:left-[52px]";
 </script>
 
 <template>
-  <button @click="handleClick" :class="`${buttonBackground} ${buttonSize} ${buttonOther}`">
+  <button :class="`${buttonBackground} ${buttonSize} ${buttonOther}`">
     <span
       :class="`${spanAnimation} ${spanBackground} ${spanOther} ${spanSize} ${spanPosition}`"
     />
-    <TzIcon
-      iconName="MoonIcon"
-      variant="primary"
-      class="place-self-center"
-    />
-    <TzIcon
-      iconName="SunIcon"
-      variant="primary"
-      class="place-self-center"
-    />
+    <TzIcon iconName="MoonIcon" variant="primary" class="place-self-center" />
+    <TzIcon iconName="SunIcon" variant="primary" class="place-self-center" />
   </button>
 </template>

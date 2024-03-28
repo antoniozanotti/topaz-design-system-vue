@@ -7,15 +7,6 @@ import TzToggleTheme from "./TzToggleTheme.vue";
 const meta: Meta<typeof TzToggleTheme> = {
   component: TzToggleTheme,
   tags: ["autodocs"],
-  argTypes: {
-    initialTheme: {
-      control: "select",
-      options: ["dark", ""],
-    }
-  },
-  args: {
-    initialTheme: "dark",
-  }
 };
 
 export default meta;
@@ -32,9 +23,6 @@ export const InitialThemeDark: Story = {
 
 export const InitialThemeLight: Story = {
   name: "Initial Theme: Light",
-  args: {
-    initialTheme: ""
-  },
   parameters: {
     themes: {
       themeOverride: 'light'
