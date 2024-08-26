@@ -17,7 +17,7 @@ let spanPosition = "self-center left-[40px] dark:left-[3px] lg:left-[52px]";
 </script>
 
 <template>
-  <button :class="`${buttonBackground} ${buttonSize} ${buttonOther}`">
+  <button :class="`${buttonBackground} ${buttonSize} ${buttonOther}`" aria-label="Toggle Theme">
     <span
       :class="`${spanAnimation} ${spanBackground} ${spanOther} ${spanSize} ${spanPosition}`"
     />
