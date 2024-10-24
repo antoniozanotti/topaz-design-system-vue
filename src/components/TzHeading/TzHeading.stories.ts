@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzHeading, {
-  TzHeadingLevels,
-  TzHeadingSizes,
-  TzHeadingVariants,
-} from "./TzHeading.vue";
+import TzHeading from "./TzHeading.vue";
+import { LevelEnum } from "./LevelEnum";
+import { SizeEnum } from "./SizeEnum";
+import { VariantEnum } from "./VariantEnum";
 
 /**
  * The TzHeading component.
@@ -14,15 +13,15 @@ const meta: Meta<typeof TzHeading> = {
   argTypes: {
     level: {
       control: "select",
-      options: ["", ...TzHeadingLevels],
+      options: ["", ...Object.keys(LevelEnum)],
     },
     size: {
       control: "select",
-      options: ["", ...TzHeadingSizes],
+      options: ["", ...Object.keys(SizeEnum)],
     },
     variant: {
       control: "select",
-      options: ["", ...TzHeadingVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     },
     default: {
       control: "text",
@@ -31,7 +30,7 @@ const meta: Meta<typeof TzHeading> = {
   },
   args: {
     level: "h1",
-    size: "x_large",
+    size: "large",
     variant: "accent",
     default: "Heading",
   },
@@ -41,7 +40,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const h1: Story = {
-  name: "h1, x_large, accent",
+  name: "h1, large, accent",
 };
 
 export const h2: Story = {

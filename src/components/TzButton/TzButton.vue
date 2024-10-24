@@ -1,31 +1,10 @@
-<script lang="ts">
-export const TzButtonVariants = [
-  "accent",
-  "primary",
-  "secondary",
-  "negative",
-  "dark",
-  "light",
-] as const;
-export type TzButtonVariant = (typeof TzButtonVariants)[number];
-</script>
-
 <script lang="ts" setup>
-import * as heroIcons from "@heroicons/vue/20/solid";
 import { useVariantClasses, useFocusClasses } from "../TzStyles/TzStyles.vue";
-import TzIcon, { TzIconVariants } from "../TzIcon/TzIcon.vue";
+import TzIcon from "../TzIcon/TzIcon.vue";
+import { VariantEnum } from "../TzIcon/VariantEnum";
+import { TzButtonInterface } from "./TzButtonInterface";
 
-export interface TzButtonProps {
-  label?: string;
-  iconName?: keyof typeof heroIcons;
-  isIconAfterLabel?: boolean;
-  variant?: TzButtonVariant;
-  filled?: boolean;
-  isLoading?: boolean;
-  disabled?: boolean;
-}
-
-const props = withDefaults(defineProps<TzButtonProps>(), {
+const props = withDefaults(defineProps<TzButtonInterface>(), {
   isIconAfterLabel: false,
   variant: "accent",
   filled: true,
@@ -85,7 +64,7 @@ const iconName = computed(() => {
 
 // icon variant
 const iconVariant = computed(() => {
-  let classes: (typeof TzIconVariants)[number] = props.variant;
+  let classes: keyof typeof VariantEnum = props.variant;
   if (props.filled) {
     switch (props.variant) {
       case "accent":

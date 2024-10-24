@@ -1,41 +1,7 @@
-<script lang="ts">
-export const TzHeadingLevels = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
-export type TzHeadingLevel = (typeof TzHeadingLevels)[number];
-
-export const TzHeadingSizes = ["small", "medium", "large", "x_large"] as const;
-export type TzHeadingSize = (typeof TzHeadingSizes)[number];
-
-export const TzHeadingVariants = [
-  "accent",
-  "accent-1",
-  "accent-2",
-  "primary",
-  "primary-1",
-  "primary-2",
-  "secondary",
-  "secondary-1",
-  "secondary-2",
-  "negative",
-  "negative-1",
-  "negative-2",
-  "dark",
-  "dark-1",
-  "dark-2",
-  "light",
-  "light-1",
-  "light-2",
-] as const;
-export type TzHeadingVariant = (typeof TzHeadingVariants)[number];
-</script>
-
 <script lang="ts" setup>
-export interface TzHeadingProps {
-  level?: TzHeadingLevel;
-  size?: TzHeadingSize;
-  variant?: TzHeadingVariant;
-}
+import { TzHeadingInterface } from "./TzHeadingInterface"
 
-const props = withDefaults(defineProps<TzHeadingProps>(), {
+const props = withDefaults(defineProps<TzHeadingInterface>(), {
   level: "h1",
   size: "small",
   variant: "accent",

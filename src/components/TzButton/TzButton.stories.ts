@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzButton, { TzButtonVariants } from "./TzButton.vue";
+import TzButton from "./TzButton.vue";
 import * as heroIcons from "@heroicons/vue/20/solid";
+import { VariantEnum } from "./VariantEnum";
 
 /**
  * The TzButton component has styles for hover, active and focus events, try it.
@@ -12,7 +13,7 @@ const meta: Meta<typeof TzButton> = {
     iconName: { control: "select", options: ["", ...Object.keys(heroIcons)] },
     variant: {
       control: "select",
-      options: ["", ...TzButtonVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     },
   },
   args: {

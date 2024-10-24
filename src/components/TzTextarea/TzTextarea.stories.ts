@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzTextarea, { TzTextareaVariants } from "./TzTextarea.vue";
+import TzTextarea from "./TzTextarea.vue";
+import { VariantEnum } from "./VariantEnum";
 
 /**
  * The TzTextarea component has styles for hover and focus events, try it.
@@ -10,7 +11,7 @@ const meta: Meta<typeof TzTextarea> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["", ...TzTextareaVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     }
   },
   args: {

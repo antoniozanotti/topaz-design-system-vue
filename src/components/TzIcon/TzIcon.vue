@@ -1,30 +1,8 @@
-<script lang="ts">
-export const TzIconVariants = [
-  "accent",
-  "inverse-accent",
-  "primary",
-  "inverse-primary",
-  "secondary",
-  "inverse-secondary",
-  "negative",
-  "inverse-negative",
-  "dark",
-  "inverse-dark",
-  "light",
-  "inverse-light",
-] as const;
-export type TzIconVariant = (typeof TzIconVariants)[number];
-</script>
-
 <script lang="ts" setup>
 import * as heroIcons from "@heroicons/vue/24/outline";
+import { TzIconInterface } from "./TzIconInterface";
 
-export interface TzIconProps {
-  iconName: keyof typeof heroIcons;
-  variant?: (typeof TzIconVariants)[number];
-}
-
-const props = withDefaults(defineProps<TzIconProps>(), {
+const props = withDefaults(defineProps<TzIconInterface>(), {
   variant: "accent",
 });
 

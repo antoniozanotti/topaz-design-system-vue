@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render } from '@testing-library/vue';
 import '@testing-library/jest-dom/vitest';
-import TzInput from './TzInput.vue';
+import TzInput from '../TzInput.vue';
 
 describe('TzInput Component', () => {
   it('should render correctly', () => {
@@ -10,5 +10,6 @@ describe('TzInput Component', () => {
     const input = container.querySelector("input[name='inputName']");
 
     expect(input).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });

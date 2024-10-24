@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzInput, { TzInputVariants } from "./TzInput.vue";
+import TzInput from "./TzInput.vue";
+import { VariantEnum } from "./VariantEnum";
 
 /**
  * The TzInput component has styles for hover and focus events, try it.
@@ -10,7 +11,7 @@ const meta: Meta<typeof TzInput> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["", ...TzInputVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     },
   },
   args: {

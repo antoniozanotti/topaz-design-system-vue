@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzIcon, { TzIconVariants } from "./TzIcon.vue";
+import TzIcon from "./TzIcon.vue";
+import { VariantEnum } from "./VariantEnum";
 import * as heroIcons from "@heroicons/vue/24/outline";
 
 /**
@@ -12,7 +13,7 @@ const meta: Meta<typeof TzIcon> = {
     iconName: { control: "select", options: ["", ...Object.keys(heroIcons)] },
     variant: {
       control: "select",
-      options: ["", ...TzIconVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     },
   },
   args: {

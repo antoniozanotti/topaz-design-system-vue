@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import TzIcon from "../TzIcon/TzIcon.vue";
+import { TzToggleThemeInterface } from "./TzToggleThemeInterface";
 
-export interface TzToggleThemeProps {}
-
-const props = withDefaults(defineProps<TzToggleThemeProps>(), {});
+const props = withDefaults(defineProps<TzToggleThemeInterface>(), {});
 
 let buttonBackground = "bg-secondary dark:bg-dark-secondary";
 let buttonSize = "w-[104px] h-[38px] lg:w-[132px] lg:h-[48px]";

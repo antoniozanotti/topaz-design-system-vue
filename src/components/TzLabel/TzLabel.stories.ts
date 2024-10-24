@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzLabel, { TzLabelVariants } from "./TzLabel.vue";
+import TzLabel from "./TzLabel.vue";
+import { VariantEnum } from "./VariantEnum";
 
 /**
  * The TzLabel component.
@@ -10,7 +11,7 @@ const meta: Meta<typeof TzLabel> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["", ...TzLabelVariants],
+      options: ["", ...Object.keys(VariantEnum)],
     },
   },
   args: {

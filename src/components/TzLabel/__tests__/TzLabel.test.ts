@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/vue";
 import "@testing-library/jest-dom/vitest";
-import TzLabel from "./TzLabel.vue";
+import TzLabel from "../TzLabel.vue";
 
 const basicTestSpan = (container: Element) => {
   const span = container.querySelector("span");
@@ -18,6 +18,7 @@ describe("TzLabel Component", () => {
 
     basicTestSpan(container);
     basicTestLabel(container, "Label");
+    expect(container).toMatchSnapshot();
   });
 
   it("should render disable state", () => {
@@ -27,5 +28,6 @@ describe("TzLabel Component", () => {
 
     basicTestSpan(container);
     basicTestLabel(container, "Locked");
+    expect(container).toMatchSnapshot();
   });
 });

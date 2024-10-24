@@ -1,20 +1,18 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/vue";
 import "@testing-library/jest-dom/vitest";
-import TzHeading from "./TzHeading.vue";
-import type {
-  TzHeadingLevel,
-  TzHeadingSize,
-  TzHeadingVariant,
-} from "./TzHeading.vue";
+import TzHeading from "../TzHeading.vue";
+import { LevelEnum } from "../LevelEnum";
+import { SizeEnum } from "../SizeEnum";
+import { VariantEnum } from "../VariantEnum";
 
 const basicTestHeading = (
-  levelString: TzHeadingLevel,
+  levelString: keyof typeof LevelEnum,
   level: number,
-  size: TzHeadingSize,
-  variant: TzHeadingVariant
+  size: keyof typeof SizeEnum,
+  variant: keyof typeof VariantEnum
 ) => {
-  render(TzHeading, {
+  const { container } = render(TzHeading, {
     props: {
       level: levelString,
       size: size,
@@ -27,13 +25,14 @@ const basicTestHeading = (
   const heading = screen.getByRole("heading", { level: level });
   expect(heading).toBeInTheDocument();
   expect(heading).toHaveTextContent("Heading");
+  expect(container).toMatchSnapshot();
 
   return heading;
 };
 
 describe("TzHeading Component", () => {
-  it("should render h1, x_large, accent", () => {
-    basicTestHeading("h1", 1, "x_large", "accent");
+  it("should render h1, large, accent", () => {
+    basicTestHeading("h1", 1, "large", "accent");
   });
 
   it("should render h2, large, accent-1", () => {

@@ -1,26 +1,8 @@
-<script lang="ts">
-export const TzLabelVariants = [
-  "accent",
-  "primary",
-  "secondary",
-  "negative",
-  "dark",
-  "light",
-] as const;
-export type TzLabelVariant = (typeof TzLabelVariants)[number];
-</script>
-
 <script lang="ts" setup>
 import { useVariantClasses } from "../TzStyles/TzStyles.vue";
+import { TzLabelInterface } from "./TzLabelInterface";
 
-export interface TzLabelProps {
-  label?: string;
-  variant?: TzLabelVariant;
-  filled?: boolean;
-  disabled?: boolean;
-}
-
-const props = withDefaults(defineProps<TzLabelProps>(), {
+const props = withDefaults(defineProps<TzLabelInterface>(), {
   variant: "accent",
   filled: true,
   disabled: false,

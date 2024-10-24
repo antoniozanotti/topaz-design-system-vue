@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render } from '@testing-library/vue';
 import '@testing-library/jest-dom/vitest';
-import TzTextarea from './TzTextarea.vue';
+import TzTextarea from '../TzTextarea.vue';
 
 describe('TzTextarea Component', () => {
   it('should render correctly', () => {
@@ -10,5 +10,6 @@ describe('TzTextarea Component', () => {
     const textarea = container.querySelector("textarea[name='textareaName']");
 
     expect(textarea).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });
