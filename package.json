@@ -2,7 +2,7 @@
   "name": "topaz-vue",
   "description": "UI component library based on tailwindcss, UnoCSS, heroicons. Topaz is a MIT licensed project that is developed and maintained by Antônio Zanotti.",
   "author": "Antonio Ricardo Marcon Zanotti <antoniorzanotti@gmail.com>",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "license": "MIT",
   "homepage": "https://github.com/antoniozanotti/topaz-vue#readme",
   "private": false,
