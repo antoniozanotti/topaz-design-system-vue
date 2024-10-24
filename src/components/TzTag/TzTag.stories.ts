@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TzLabel from "./TzLabel.vue";
+import TzTag from "./TzTag.vue";
 import { VariantEnum } from "./VariantEnum";
 
 /**
- * The TzLabel component.
+ * The TzTag component.
  */
-const meta: Meta<typeof TzLabel> = {
-  component: TzLabel,
+const meta: Meta<typeof TzTag> = {
+  component: TzTag,
   tags: ["autodocs"],
   argTypes: {
     variant: {

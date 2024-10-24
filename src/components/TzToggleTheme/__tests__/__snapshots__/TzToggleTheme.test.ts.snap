@@ -4,11 +4,11 @@ exports[`TzToggleTheme Component > should render correctly 1`] = `
 <div>
   <button
     aria-label="Toggle Theme"
-    class="bg-secondary dark:bg-dark-secondary w-[104px] h-[38px] lg:w-[132px] lg:h-[48px] rounded-full cursor-pointer relative flex justify-around"
+    class="rounded-full cursor-pointer relative flex justify-around bg-secondary dark:bg-dark-secondary w-[104px] h-[38px] lg:w-[132px] lg:h-[48px]"
     initialtheme=""
   >
     <span
-      class="transform duration-300 bg-secondary-2 dark:bg-dark-secondary-2 block rounded-full absolute w-[60px] h-[32px] lg:w-[77px] lg:h-[42px] self-center left-[40px] dark:left-[3px] lg:left-[52px]"
+      class="block rounded-full absolute transform duration-300 bg-secondary-2 dark:bg-dark-secondary-2 w-[60px] h-[32px] lg:w-[77px] lg:h-[42px] self-center left-[40px] dark:left-[3px] lg:left-[52px]"
     />
     <svg
       aria-hidden="true"

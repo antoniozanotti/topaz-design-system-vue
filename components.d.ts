@@ -11,8 +11,8 @@ declare module 'vue' {
     TzHeading: typeof import('./src/components/TzHeading/TzHeading.vue')['default']
     TzIcon: typeof import('./src/components/TzIcon/TzIcon.vue')['default']
     TzInput: typeof import('./src/components/TzInput/TzInput.vue')['default']
-    TzLabel: typeof import('./src/components/TzLabel/TzLabel.vue')['default']
     TzStyles: typeof import('./src/components/TzStyles/TzStyles.vue')['default']
+    TzTag: typeof import('./src/components/TzTag/TzTag.vue')['default']
     TzTextarea: typeof import('./src/components/TzTextarea/TzTextarea.vue')['default']
     TzToggleTheme: typeof import('./src/components/TzToggleTheme/TzToggleTheme.vue')['default']
   }

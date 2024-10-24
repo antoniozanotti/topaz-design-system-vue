@@ -3,7 +3,7 @@
 exports[`TzButton Component > should render disable state 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent opacity-50 pointer-events-none"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px] opacity-50 pointer-events-none"
     disabled=""
   >
     <svg
@@ -31,7 +31,7 @@ exports[`TzButton Component > should render disable state 1`] = `
 exports[`TzButton Component > should render label and icon on the left 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]"
     disabled=""
   >
     <svg
@@ -59,7 +59,7 @@ exports[`TzButton Component > should render label and icon on the left 1`] = `
 exports[`TzButton Component > should render label and icon on the right 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]"
     disabled=""
   >
     <svg
@@ -87,7 +87,7 @@ exports[`TzButton Component > should render label and icon on the right 1`] = `
 exports[`TzButton Component > should render loading state 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent opacity-50 pointer-events-none"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] opacity-50 pointer-events-none"
     disabled=""
   >
     <svg
@@ -115,7 +115,7 @@ exports[`TzButton Component > should render loading state 1`] = `
 exports[`TzButton Component > should render only icon 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px]"
     disabled=""
   >
     <svg
@@ -141,7 +141,7 @@ exports[`TzButton Component > should render only icon 1`] = `
 exports[`TzButton Component > should render only label 1`] = `
 <div>
   <button
-    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2 h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent"
+    class="rounded-full font-medium flex gap-x-2 justify-center place-items-center focus:outline focus:outline-offset-2 focus:outline-2  bg-accent dark:bg-dark-accent hover:bg-accent-1 active:bg-accent-2 focus:outline-accent dark:hover:bg-dark-accent-1 dark:active:bg-dark-accent-2 dark:focus:outline-dark-accent text-inverse-accent dark:text-inverse-dark-accent h-[38px] lg:h-[48px] min-w-[38px] lg:min-w-[48px] px-[27px] lg:px-[36px]"
     disabled=""
   >
     <!--v-if-->

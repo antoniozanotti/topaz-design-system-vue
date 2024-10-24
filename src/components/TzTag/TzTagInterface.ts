@@ -1,6 +1,6 @@
 import { VariantEnum } from "./VariantEnum";
 
-export interface TzLabelInterface {
+export interface TzTagInterface {
   label?: string;
   variant?: keyof typeof VariantEnum;
   filled?: boolean;
